@@ -72,7 +72,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"itemName\":\"Pencil\",\r\n    \"dateProcured\":\"2022-11-27\",\r\n    \"vendorId\":1,\r\n    \"status\":\"in-store\"\r\n}\r\n",
+					"raw": "{\r\n    \"itemName\":\"Rrrrrrr\",\r\n    \"dateProcured\":\"2022-11-28\",\r\n    \"vendorId\":1,\r\n    \"location\":\"store\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -139,7 +139,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"itemName\":\"Pencil case\",\r\n    \"dateProcured\":\"2022-11-27\",\r\n    \"vendorId\":1,\r\n    \"status\":\"in-store\"\r\n}\r\n",
+					"raw": "{\r\n    \"itemName\":\"Pencil case\",\r\n    \"dateProcured\":\"2022-11-27\",\r\n    \"vendorId\":1,\r\n    \"location\":\"in-store\"\r\n}\r\n",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -186,15 +186,25 @@
 			"request": {
 				"method": "PUT",
 				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"price\":60000,\r\n    \"dateReceived\":\"2022-11-28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
 				"url": {
-					"raw": "localhost:8080/api/releaseFromStore",
+					"raw": "localhost:8080/api/releaseFromStore/1",
 					"host": [
 						"localhost"
 					],
 					"port": "8080",
 					"path": [
 						"api",
-						"releaseFromStore"
+						"releaseFromStore",
+						"1"
 					]
 				}
 			},
@@ -204,15 +214,48 @@
 			"name": "FetchItemsCreatedToday",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/store/createdToday",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"store",
+						"createdToday"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "ReturnToVendor",
 			"request": {
-				"method": "GET",
-				"header": []
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"dateReturned\":\"2022-11-28\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/api/returnToVendor/1",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"returnToVendor",
+						"1"
+					]
+				}
 			},
 			"response": []
 		},
@@ -220,7 +263,29 @@
 			"name": "FetchItemsReturnedToVendor",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/items_returned/dateRange?startDate=2022-11-01&endDate=2022-11-30",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"items_returned",
+						"dateRange"
+					],
+					"query": [
+						{
+							"key": "startDate",
+							"value": "2022-11-01"
+						},
+						{
+							"key": "endDate",
+							"value": "2022-11-30"
+						}
+					]
+				}
 			},
 			"response": []
 		},
@@ -248,7 +313,18 @@
 			"name": "GetSupermarketItems",
 			"request": {
 				"method": "GET",
-				"header": []
+				"header": [],
+				"url": {
+					"raw": "localhost:8080/api/supermarket_item",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"api",
+						"supermarket_item"
+					]
+				}
 			},
 			"response": []
 		}
