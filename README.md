@@ -17,7 +17,7 @@ Domain
 	- Has a method to find Items created today.
 
 	Supermarket Repository
-	- has method to find Items released to supermarket today.
+	- Has a method to find Items released to supermarket today.
 
 
 Api
